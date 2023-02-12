@@ -1,13 +1,23 @@
-import React from 'react';
-import {Counter} from "./components/Counter";
+import React, {Suspense} from 'react';
+import {Link, Route, Routes} from "react-router-dom";
+
+import {AboutAsyncPage} from "./pages/AboutPage/AboutPage.async";
+import {MainAsyncPage} from "./pages/MainPage/MainPage.async";
+
 import "./index.scss";
 
 const App = () => {
     return (
-        <div className="app">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda atque culpa cumque dicta, doloremque, doloribus enim eum ipsum molestias, odio pariatur quisquam saepe ullam vero! Aperiam, cupiditate dolores! A?
-            <Counter />
-        </div>
+        <>
+            <Link to={"/"}>Home</Link>
+            <Link to={"/about"}>About</Link>
+            <Suspense fallback={"Loading..."}>
+                <Routes>
+                    <Route path={"/"} element={<MainAsyncPage />} />
+                    <Route path={"/about"} element={<AboutAsyncPage />} />
+                </Routes>
+            </Suspense>
+        </>
     );
 };
 
