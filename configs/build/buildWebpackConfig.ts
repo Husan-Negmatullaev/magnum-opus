@@ -17,7 +17,7 @@ export function buildWebpackConfig(configs: BuildOptions): webpack.Configuration
         },
         plugins: buildPlugins(paths),
         module: {
-            rules: buildLoaders()
+            rules: buildLoaders(configs),
         },
         resolve: buildResolvers(),
         devServer: isDev ? buildDevServer(configs) : undefined,
