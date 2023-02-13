@@ -5,19 +5,18 @@ import {MainPage} from "pages/MainPage";
 import {AboutPage} from "pages/AboutPage";
 import {Navbar} from "widgets/Navbar";
 
+import {routerConfig} from "app/providers/router/routeConfig";
 import {classNames} from "shared/lib/classNames";
 import {useTheme} from "app/providers/ThemeProvider";
 
 import "./styles/index.scss";
-import {routerConfig} from "app/providers/router/routeConfig";
 
 const App = () => {
-    const {theme, toggleTheme} = useTheme();
+    const {theme} = useTheme();
 
     return (
         <div className={classNames("app", {}, [theme])}>
             <Navbar />
-            <button type="button" onClick={toggleTheme}>Theme</button>
             <Suspense fallback={"Loading..."}>
                 <Routes>
                     {

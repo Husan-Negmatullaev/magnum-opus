@@ -1,10 +1,11 @@
 import React from "react";
 
 import {AppLink} from "shared/ui/AppLink";
-
 import {classNames} from "shared/lib/classNames";
-import classes from "./Navbar.module.scss";
 import {AppLinkTheme} from "shared/ui/AppLink/AppLink";
+import {ThemeButton} from "shared/ui/ThemeButton";
+
+import classes from "./Navbar.module.scss";
 
 interface NavbarProp extends React.ComponentProps<"nav"> {
 
@@ -13,6 +14,7 @@ interface NavbarProp extends React.ComponentProps<"nav"> {
 export const Navbar: React.FC<NavbarProp> = ({ className }) => {
     return (
         <nav className={classNames(classes.navbar, {}, [className])}>
+            <ThemeButton />
             <div className={classes.navbar__links}>
                 <AppLink
                     theme={AppLinkTheme.PRIMARY}

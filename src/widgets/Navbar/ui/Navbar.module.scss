@@ -3,15 +3,13 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0 10px;
 
   min-height: var(--nav-height);
 
-
   &__links {
   }
-
 
   &__link {
     display: inline-block;
