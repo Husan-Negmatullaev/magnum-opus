@@ -10,4 +10,8 @@
   --font-size-l: 24px;
   --fs-line-l: math.div(32, 24);
   --font-l: var(--font-size-l) / var(--fs-line-l) var(--font-family-main);
+
+
+  // Размеры
+  --nav-height: 50px;
 }
