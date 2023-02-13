@@ -1,0 +1,1 @@
+export { routerConfig } from "./ui/routeConfig";
