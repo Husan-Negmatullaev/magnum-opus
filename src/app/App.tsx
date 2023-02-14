@@ -1,11 +1,9 @@
-import React, {Suspense} from 'react';
-import {Route, Routes} from "react-router-dom";
+import React from 'react';
 
-import {MainPage} from "pages/MainPage";
-import {AboutPage} from "pages/AboutPage";
 import {Navbar} from "widgets/Navbar";
+import {SidebarLayout} from "widgets/Sidebar";
 
-import {routerConfig} from "app/providers/router/routeConfig";
+import {AppRouter} from "app/providers/router/routeConfig";
 import {classNames} from "shared/lib/classNames";
 import {useTheme} from "app/providers/ThemeProvider";
 
@@ -17,21 +15,12 @@ const App = () => {
     return (
         <div className={classNames("app", {}, [theme])}>
             <Navbar />
-            <Suspense fallback={"Loading..."}>
-                <Routes>
-                    {
-                        Object.values(routerConfig).map(({path, element}) => (
-                            <Route
-                                key={path}
-                                path={path}
-                                element={element}
-                            />
-                        ))
-                    }
-                    <Route path={"/"} element={<MainPage />} />
-                    <Route path={"/about"} element={<AboutPage />} />
-                </Routes>
-            </Suspense>
+            <div className="content-app">
+                <SidebarLayout />
+                <main>
+                    <AppRouter />
+                </main>
+            </div>
         </div>
     );
 };

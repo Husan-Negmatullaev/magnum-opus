@@ -1,0 +1,21 @@
+.sidebar {
+  padding: 5px 10px;
+  transition: width 0.3s ease 0s;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--nav-height));
+  background-color: var(--bg-inverted-color);
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 1fr auto;
+
+  &.collapsed {
+    width: var(--sidebar-width-collapsed);
+  }
+
+  &__body {
+  }
+
+  &__footer {
+    justify-self: center;
+  }
+}

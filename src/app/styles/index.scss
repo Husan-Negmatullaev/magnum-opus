@@ -1,7 +1,7 @@
-@import "src/app/styles/reset";
-@import "src/app/styles/variables/globals";
-@import "src/app/styles/themes/normal";
-@import "src/app/styles/themes/dark";
+@import "reset";
+@import "./variables/globals";
+@import "./themes/normal";
+@import "./themes/dark";
 
 .app {
     font-size: var(--font-m);
@@ -10,4 +10,13 @@
     color: var(--primary-color);
 
     min-height: 100vh;
+}
+
+.content-app {
+    display: flex;
+}
+
+.content-app > main {
+    flex-grow: 1;
+    padding: 20px;
 }
