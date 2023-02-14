@@ -1,8 +1,11 @@
 import React from "react";
+import {useTranslation} from "react-i18next";
+
+import {LanguageChanger} from "widgets/LanguageChanger";
+import {ThemeButton} from "widgets/ThemeChanger";
+import {Button, ButtonThemes} from "shared/ui/Button";
 
 import {classNames} from "shared/lib/classNames";
-import {Button, ButtonThemes} from "shared/ui/Button";
-import {ThemeButton} from "shared/ui/ThemeButton";
 import classes from "./SidebarLayout.module.scss";
 
 interface SidebarLayoutProps extends React.ComponentProps<"aside"> {
@@ -10,6 +13,7 @@ interface SidebarLayoutProps extends React.ComponentProps<"aside"> {
 }
 
 export const SidebarLayout: React.FC<SidebarLayoutProps> = ({ className }) => {
+    const { t } = useTranslation();
     const [collapse, setCollapse] = React.useState<boolean>();
 
     const toggleCollapse = () => {
@@ -22,10 +26,13 @@ export const SidebarLayout: React.FC<SidebarLayoutProps> = ({ className }) => {
                 <Button
                     theme={ButtonThemes.CLEAN}
                     onClick={toggleCollapse}
-                >Toggle</Button>
+                >
+                    {t("change-theme")}
+                </Button>
             </div>
             <div className={classes.sidebar__footer}>
                 <ThemeButton />
+                <LanguageChanger />
             </div>
         </aside>
     );

@@ -15,12 +15,13 @@ export function buildWebpackConfig(configs: BuildOptions): webpack.Configuration
             filename: "[name].[contenthash].js",
             clean: true
         },
-        plugins: buildPlugins(paths),
+        plugins: buildPlugins(configs),
         module: {
             rules: buildLoaders(configs),
         },
         resolve: buildResolvers(configs),
         devServer: isDev ? buildDevServer(configs) : undefined,
         devtool: isDev ? "inline-source-map" : undefined,
+        cache: !isDev
     }
 }

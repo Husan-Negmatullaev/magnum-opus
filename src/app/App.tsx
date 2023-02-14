@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from "react";
 
 import {Navbar} from "widgets/Navbar";
 import {SidebarLayout} from "widgets/Sidebar";
@@ -13,15 +13,18 @@ const App = () => {
     const {theme} = useTheme();
 
     return (
-        <div className={classNames("app", {}, [theme])}>
-            <Navbar />
-            <div className="content-app">
-                <SidebarLayout />
-                <main>
-                    <AppRouter />
-                </main>
+        <Suspense fallback={""}>
+            <div className={classNames("app", {}, [theme])}>
+                <Navbar />
+                {/*<TranslateComponent />*/}
+                <div className="content-app">
+                    <SidebarLayout />
+                    <main>
+                        <AppRouter />
+                    </main>
+                </div>
             </div>
-        </div>
+        </Suspense>
     );
 };
 
