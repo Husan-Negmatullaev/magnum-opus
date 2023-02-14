@@ -1,1 +1,1 @@
-export { SidebarLayout } from "./ui/SidebarLayout/SidebarLayout";
+export { SidebarLayout } from './ui/SidebarLayout/SidebarLayout';
