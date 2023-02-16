@@ -7,7 +7,6 @@ import { Button, ButtonThemes } from 'shared/ui/Button';
 
 import IconThemeLight from 'shared/assets/icons/theme-light.svg';
 import IconThemeDark from 'shared/assets/icons/theme-dark.svg';
-import classes from './ThemeButton.module.scss';
 
 interface ToggleThemeProps extends React.HTMLAttributes<HTMLButtonElement> {
 
@@ -20,7 +19,7 @@ export const ThemeButton: React.FC<ToggleThemeProps> = ({ className }) => {
     <Button
       theme={ButtonThemes.CLEAN}
       onClick={toggleTheme}
-      className={classNames(classes.ToggleTheme, {}, [className])}
+      className={classNames('', {}, [className])}
     >
       {theme === Theme.DARK ? <IconThemeDark /> : <IconThemeLight />}
     </Button>

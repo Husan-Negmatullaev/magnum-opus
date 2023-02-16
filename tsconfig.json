@@ -8,7 +8,7 @@
     "allowJs": true,
     "moduleResolution": "node",
     // Указания абсолютного путя
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
     },
