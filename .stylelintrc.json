@@ -1,3 +1,12 @@
 {
-  "extends": "stylelint-config-standard-scss"
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "color-no-invalid-hex": true,
+    "selector-class-pattern": [
+      "^[a-z][a-zA-Z0-9]+$",
+      {
+        "message": "Expected custom property name to be lowerCamelCase"
+      }
+    ]
+  }
 }

@@ -2,5 +2,6 @@
   "language": "Русский",
   "nav-button-collapse": "Сжать",
   "nav-link-about": "О нас",
-  "nav-link-home": "Главная"
+  "nav-link-home": "Главная",
+  "not-found": "Страница не найдена"
 }

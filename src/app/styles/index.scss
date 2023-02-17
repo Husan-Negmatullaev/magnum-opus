@@ -4,6 +4,7 @@
 @import "./themes/dark";
 
 .app {
+  font-family: var(--font-family-main);
   font-size: var(--font-m);
   background-color: var(--bg-color);
   color: var(--primary-color);

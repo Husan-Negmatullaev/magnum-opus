@@ -3,5 +3,6 @@
   "main-text": "",
   "nav-button-collapse": "Compress",
   "nav-link-about": "About",
-  "nav-link-home": "Home"
+  "nav-link-home": "Home",
+  "not-found": "Page not found"
 }
