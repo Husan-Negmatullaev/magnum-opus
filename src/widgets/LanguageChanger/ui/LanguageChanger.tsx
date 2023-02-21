@@ -9,7 +9,9 @@ interface LanguageChangerProps extends React.ComponentProps<'button'> {
 
 }
 
-export const LanguageChanger: React.FC<LanguageChangerProps> = ({ className }) => {
+export const LanguageChanger: React.FC<LanguageChangerProps> = (
+  { className },
+) => {
   const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => {

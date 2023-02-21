@@ -21,7 +21,15 @@ export const SidebarLayout: React.FC<SidebarLayoutProps> = ({ className }) => {
   };
 
   return (
-    <aside className={classNames(classes.sidebar, { [classes.collapsed]: collapse }, [className])}>
+    <aside
+      className={
+        classNames(
+          classes.sidebar,
+          { [classes.collapsed]: collapse },
+          [className],
+        )
+      }
+    >
       <div className={classes.sidebar__body}>
         <Button
           theme={ButtonThemes.CLEAN}

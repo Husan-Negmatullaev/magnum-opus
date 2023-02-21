@@ -1,7 +1,11 @@
 {
+  "": "",
+  "error-occurred": "Произошла ощибка",
   "language": "Русский",
   "nav-button-collapse": "Сжать",
   "nav-link-about": "О нас",
   "nav-link-home": "Главная",
-  "not-found": "Страница не найдена"
+  "not-found": "Страница не найдена",
+  "reload-page": "Перезагрузить страницу!",
+  "throw-an-error": "Вызвать ошибку!"
 }

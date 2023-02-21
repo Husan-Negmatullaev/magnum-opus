@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 
 import { Navbar } from 'widgets/Navbar';
 import { SidebarLayout } from 'widgets/Sidebar';
+import { BugButton } from 'app/providers/ErrorBoundary/ui/BugButton';
 
 import { AppRouter } from 'app/providers/router/routeConfig';
 import { classNames } from 'shared/lib/classNames';
@@ -19,6 +20,7 @@ const App = () => {
         <div className="content-app">
           <SidebarLayout />
           <main>
+            <BugButton />
             <AppRouter />
           </main>
         </div>
