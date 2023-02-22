@@ -16,8 +16,8 @@ export const SidebarLayout: React.FC<SidebarLayoutProps> = ({ className }) => {
   const { t } = useTranslation();
   const [collapse, setCollapse] = React.useState<boolean>();
 
-  const toggleCollapse = () => {
-    setCollapse((prev) => !prev);
+  const toggleCollapse = async () => {
+    await setCollapse((prev) => !prev);
   };
 
   return (
@@ -29,6 +29,7 @@ export const SidebarLayout: React.FC<SidebarLayoutProps> = ({ className }) => {
           [className],
         )
       }
+      data-testid="sidebar"
     >
       <div className={classes.sidebar__body}>
         <Button
