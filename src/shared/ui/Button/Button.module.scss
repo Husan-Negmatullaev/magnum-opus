@@ -7,4 +7,11 @@
     border: none;
     background-color: transparent;
   }
+
+  &.outline {
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
 }

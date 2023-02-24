@@ -32,5 +32,10 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./configs/jest/setupTests.ts", // На практике это свойство опционально!
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+  ]
 }

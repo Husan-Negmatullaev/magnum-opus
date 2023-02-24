@@ -1,26 +1,10 @@
 import webpack, { RuleSetRule } from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { getSassLoader } from './loaders/sassLoader';
 import { BuildOptions } from './types/configs';
+import { getSvgLoader } from './loaders/svgLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-  const sassLoader: RuleSetRule = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-            localIdentName: isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:8]',
-          },
-        },
-      },
-      'sass-loader',
-    ],
-  };
+  const sassLoader: RuleSetRule = getSassLoader(isDev);
 
   // Если не использкуеться typescript значит нужен babel-loader
   const typescriptLoader: RuleSetRule = {
@@ -29,11 +13,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  const svgLoader: RuleSetRule = {
-    test: /\.svg$/i,
-    issuer: /\.[jt]sx?$/,
-    use: ['@svgr/webpack'],
-  };
+  const svgLoader: RuleSetRule = getSvgLoader();
 
   const imageLoader: RuleSetRule = {
     test: /\.(png|jpe?g|gif|woff|woff2)$/i,

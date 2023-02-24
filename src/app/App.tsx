@@ -8,7 +8,9 @@ import { AppRouter } from 'app/providers/router/routeConfig';
 import { classNames } from 'shared/lib/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 
-import './styles/index.scss';
+import 'app/styles/index.scss';
+
+// import './styles/index.scss';
 
 const App = () => {
   const { theme } = useTheme();

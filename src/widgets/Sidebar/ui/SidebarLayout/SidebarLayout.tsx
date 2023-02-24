@@ -33,6 +33,7 @@ export const SidebarLayout: React.FC<SidebarLayoutProps> = ({ className }) => {
     >
       <div className={classes.sidebar__body}>
         <Button
+          data-testid="collapse-btn"
           theme={ButtonThemes.CLEAN}
           onClick={toggleCollapse}
         >
