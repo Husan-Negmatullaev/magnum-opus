@@ -1,5 +1,6 @@
 .sidebar {
-  padding: 5px 10px;
+  position: relative;
+  padding: 5px 30px;
   transition: width 0.3s ease 0s;
   width: var(--sidebar-width);
   height: calc(100vh - var(--nav-height));
@@ -10,6 +11,43 @@
 
   &.collapsed {
     width: var(--sidebar-width-collapsed);
+    padding: 5px 20px;
+  }
+
+  &__collapse {
+    position: absolute;
+    bottom: 32px;
+    right: -32px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 15px;
+
+    .sidebar.collapsed & span {
+      display: none;
+    }
+
+    .sidebar.collapsed & {
+      padding: 0 10px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__icon {
+    fill: var(--primary-inverted-color);
   }
 
   &__footer {

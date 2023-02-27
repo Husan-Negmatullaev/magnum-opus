@@ -5,6 +5,12 @@
 }
 
 button {
+  color: var(--primary-inverted-color);
   font-family: var(--font-family-main);
   font-size: inherit;
+}
+
+body {
+  font-size: var(--font-m);
+  font-family: var(--font-family-main);
 }

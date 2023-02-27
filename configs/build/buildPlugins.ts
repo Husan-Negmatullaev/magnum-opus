@@ -22,6 +22,7 @@ export function buildPlugins(
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: analyze ? 'server' : 'disabled',
+      openAnalyzer: analyze,
     }),
   ];
 

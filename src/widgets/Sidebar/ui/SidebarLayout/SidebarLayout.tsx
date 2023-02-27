@@ -6,6 +6,12 @@ import { ThemeButton } from 'widgets/ThemeChanger';
 import { Button, ButtonThemes } from 'shared/ui/Button';
 
 import { classNames } from 'shared/lib/classNames';
+import { ButtonSizes } from 'shared/ui/Button/Button';
+import { AppLink } from 'shared/ui/AppLink';
+import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import HomeIcon from 'shared/assets/icons/home-icon.svg';
+import AboutIcon from 'shared/assets/icons/about-icon.svg';
 import classes from './SidebarLayout.module.scss';
 
 interface SidebarLayoutProps extends React.ComponentProps<'aside'> {
@@ -22,27 +28,46 @@ export const SidebarLayout: React.FC<SidebarLayoutProps> = ({ className }) => {
 
   return (
     <aside
-      className={
-        classNames(
-          classes.sidebar,
-          { [classes.collapsed]: collapse },
-          [className],
-        )
-      }
       data-testid="sidebar"
+      className={classNames(
+        classes.sidebar,
+        { [classes.collapsed]: collapse },
+        [className],
+      )}
     >
       <div className={classes.sidebar__body}>
+        <div className={classes.sidebar__links}>
+          <AppLink
+            theme={AppLinkTheme.PRIMARY}
+            to={RoutePath.main}
+            className={classes.sidebar__link}
+          >
+            <HomeIcon className={classes.sidebar__icon} />
+            <span>{t('nav-link-home')}</span>
+          </AppLink>
+          <AppLink
+            theme={AppLinkTheme.SECONDARY}
+            to={RoutePath.about}
+            className={classes.sidebar__link}
+          >
+            <AboutIcon className={classes.sidebar__icon} />
+            <span>{t('nav-link-about')}</span>
+          </AppLink>
+        </div>
         <Button
+          className={classes.sidebar__collapse}
           data-testid="collapse-btn"
-          theme={ButtonThemes.CLEAN}
+          square
+          size={ButtonSizes.size_l}
+          theme={ButtonThemes.BACKGROUND_INVERTED}
           onClick={toggleCollapse}
         >
-          {t('translation:nav-button-collapse')}
+          {t(collapse ? '>' : '<')}
         </Button>
       </div>
       <div className={classes.sidebar__footer}>
         <ThemeButton />
-        <LanguageChanger />
+        <LanguageChanger short={collapse} />
       </div>
     </aside>
   );

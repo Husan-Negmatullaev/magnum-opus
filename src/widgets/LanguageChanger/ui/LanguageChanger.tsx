@@ -6,11 +6,14 @@ import { ButtonThemes, Button } from 'shared/ui/Button';
 import { classNames } from 'shared/lib/classNames';
 
 interface LanguageChangerProps extends React.ComponentProps<'button'> {
-
+  short?: boolean;
 }
 
 export const LanguageChanger: React.FC<LanguageChangerProps> = (
-  { className },
+  {
+    className,
+    short,
+  },
 ) => {
   const { t, i18n } = useTranslation();
 
@@ -23,7 +26,7 @@ export const LanguageChanger: React.FC<LanguageChangerProps> = (
       theme={ButtonThemes.CLEAN}
       className={classNames('', {}, [className])}
     >
-      {t('translation:language')}
+      {t(short ? 'short-language' : 'language')}
     </Button>
   );
 };

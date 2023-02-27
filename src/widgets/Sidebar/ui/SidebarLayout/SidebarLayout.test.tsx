@@ -1,17 +1,17 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { SidebarLayout } from 'widgets/Sidebar';
 import {
-  renderTranslationTest,
-} from 'shared/lib/renderTranslationTest/renderTranslationTest';
+  componentRender,
+} from 'shared/config/tests/componentRender/componentRender';
 
 describe('SidebarLayout', () => {
   test('Test SidebarLayout', () => {
-    renderTranslationTest(<SidebarLayout />);
+    componentRender(<SidebarLayout />);
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
 
   test('Test SidebarLayout collapsed', () => {
-    renderTranslationTest(<SidebarLayout />);
+    componentRender(<SidebarLayout />);
     const btn = screen.getByTestId('collapse-btn');
     fireEvent.click(btn);
     expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
