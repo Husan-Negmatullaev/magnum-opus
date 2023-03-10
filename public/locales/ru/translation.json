@@ -1,5 +1,4 @@
 {
-  "": "",
   "error-occurred": "Произошла ощибка",
   "language": "Русский",
   "nav-button-collapse": "Сжать",
@@ -8,5 +7,6 @@
   "not-found": "Страница не найдена",
   "reload-page": "Перезагрузить страницу!",
   "short-language": "Ру",
+  "sign-in": "Войти",
   "throw-an-error": "Вызвать ошибку!"
 }

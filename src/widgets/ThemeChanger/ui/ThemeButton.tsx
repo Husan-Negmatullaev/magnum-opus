@@ -17,7 +17,7 @@ export const ThemeButton: React.FC<ToggleThemeProps> = ({ className }) => {
 
   return (
     <Button
-      theme={ButtonThemes.CLEAN}
+      theme={ButtonThemes.CLEAR}
       onClick={toggleTheme}
       className={classNames('', {}, [className])}
     >

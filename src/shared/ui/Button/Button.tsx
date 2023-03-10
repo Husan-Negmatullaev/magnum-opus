@@ -4,7 +4,8 @@ import { classNames } from 'shared/lib/classNames';
 import classes from './Button.module.scss';
 
 export enum ButtonThemes {
-    CLEAN = 'clear',
+    CLEAR = 'clear',
+    CLEAR_INVERTED = 'clearInverted',
     OUTLINE = 'outline',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted',
@@ -28,7 +29,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     className,
     square,
     size = ButtonSizes.size_m,
-    theme = ButtonThemes.CLEAN,
+    theme = ButtonThemes.CLEAR,
     ...otherProps
   } = props;
 

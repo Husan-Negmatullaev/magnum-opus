@@ -16,4 +16,10 @@
   --nav-height: 50px;
   --sidebar-width: calc(300px);
   --sidebar-width-collapsed: calc(80px);
+
+  // Глобальные цвета
+  --modal-overlay: rgb(0 0 0 / 60%);
+
+  // Z - индексы
+  --z-index-modal: 10;
 }

@@ -1,13 +1,12 @@
 {
-  "": "",
   "error-occurred": "An error has occured",
   "language": "English",
-  "main-text": "",
   "nav-button-collapse": "Compress",
   "nav-link-about": "About",
   "nav-link-home": "Home",
   "not-found": "Page not found",
   "reload-page": "",
   "short-language": "En",
+  "sign-in": "Sign in",
   "throw-an-error": "Throw an error!"
 }

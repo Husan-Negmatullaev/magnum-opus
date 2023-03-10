@@ -19,7 +19,13 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Clean = Template.bind({});
 Clean.args = {
   children: 'Test',
-  theme: ButtonThemes.CLEAN,
+  theme: ButtonThemes.CLEAR,
+};
+
+export const CleanInverted = Template.bind({});
+CleanInverted.args = {
+  children: 'Test',
+  theme: ButtonThemes.CLEAR_INVERTED,
 };
 
 export const Outline = Template.bind({});

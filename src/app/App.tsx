@@ -10,8 +10,6 @@ import { useTheme } from 'app/providers/ThemeProvider';
 
 import 'app/styles/index.scss';
 
-// import './styles/index.scss';
-
 const App = () => {
   const { theme } = useTheme();
 

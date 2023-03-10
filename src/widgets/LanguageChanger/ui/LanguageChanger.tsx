@@ -23,7 +23,7 @@ export const LanguageChanger: React.FC<LanguageChangerProps> = (
   return (
     <Button
       onClick={toggleLanguage}
-      theme={ButtonThemes.CLEAN}
+      theme={ButtonThemes.CLEAR}
       className={classNames('', {}, [className])}
     >
       {t(short ? 'short-language' : 'language')}
