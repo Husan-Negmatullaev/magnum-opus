@@ -1,5 +1,14 @@
 {
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
+    " Consequuntur delectus eum exercitationem, id officia quas quibusdam quo saepe suscipit voluptatibus": {
+      " Amet, assumenda beatae cumque nostrum obcaecati qui temporibus voluptates! Debitis deserunt odit quod ratione": {
+        " Aut consequatur molestias nostrum obcaecati tempore!": ""
+      }
+    }
+  },
+  "decrement": "уменьшить",
   "error-occurred": "Произошла ощибка",
+  "increment": "увеличить",
   "language": "Русский",
   "nav-button-collapse": "Сжать",
   "nav-link-about": "О нас",
@@ -8,7 +17,5 @@
   "reload-page": "Перезагрузить страницу!",
   "short-language": "Ру",
   "sign-in": "Войти",
-  "throw-an-error": "Вызвать ошибку!",
-  "increment": "увеличить",
-  "decrement": "уменьшить"
+  "throw-an-error": "Вызвать ошибку!"
 }

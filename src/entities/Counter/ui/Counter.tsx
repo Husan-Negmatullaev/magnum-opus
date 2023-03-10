@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'shared/ui/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next/index';
+import { useTranslation } from 'react-i18next';
 import {
   getCounterValue,
 } from '../model/selectors/getCounterValue/getCounterValue';
