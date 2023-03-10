@@ -15,6 +15,10 @@ export const useTheme = (): IUseTheme => {
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
+  React.useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return {
     theme,
     toggleTheme,

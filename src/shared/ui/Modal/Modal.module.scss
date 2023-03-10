@@ -8,7 +8,6 @@
   opacity: 0;
   z-index: -1;
   color: var(--primary-color);
-  background-color: var(--bg-color);
 
   &_open {
     pointer-events: auto;
@@ -19,7 +18,7 @@
   &__overlay {
     height: 100%;
     width: 100%;
-    background-color: var(--modal-overlay);
+    background-color: var(--overlay-color);
     display: grid;
     place-items: center;
   }
@@ -38,16 +37,6 @@
 
     .modal_closing & {
       transform: scale(0);
-    }
-
-    .light & {
-      --bg-color: #04ff04;
-      --primary-color: #04ff04;
-    }
-
-    .dark & {
-      --bg-color: #090949;
-      --primary-color: #090949;
     }
   }
 }

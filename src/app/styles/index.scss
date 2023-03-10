@@ -3,9 +3,12 @@
 @import "./themes/dark";
 @import "reset";
 
-.app {
+body {
   color: var(--primary-color);
   background-color: var(--bg-color);
+}
+
+.app {
   min-height: 100vh;
 }
 
