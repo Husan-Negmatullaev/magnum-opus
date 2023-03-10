@@ -46,9 +46,23 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     },
   };
 
+  const reactRefresh: RuleSetRule = {
+    test: /\.[jt]sx?$/,
+    exclude: /node_modules/,
+    use: [
+      {
+        loader: 'babel-loader',
+        options: {
+          plugins: ['react-refresh/babel'],
+        },
+      },
+    ],
+  };
+
   return [
     sassLoader,
     babelLoader,
+    reactRefresh,
     typescriptLoader,
     svgLoader,
     imageLoader,

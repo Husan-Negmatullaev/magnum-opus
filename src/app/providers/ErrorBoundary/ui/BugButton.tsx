@@ -1,9 +1,8 @@
 import React from 'react';
 
 import { classNames } from 'shared/lib/classNames';
-import { Button } from 'shared/ui/Button';
+import { Button, ButtonThemes } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
-import classes from './BugButton.module.scss';
 
 interface BugButtonProps extends React.ComponentProps<'button'> {
 
@@ -23,6 +22,7 @@ export const BugButton: React.FC<BugButtonProps> = ({ className }) => {
 
   return (
     <Button
+      theme={ButtonThemes.CLEAR_INVERTED}
       onClick={onThrowError}
       className={classNames('', {}, [className])}
     >
