@@ -1,11 +1,4 @@
 {
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
-    " Consequuntur delectus eum exercitationem, id officia quas quibusdam quo saepe suscipit voluptatibus": {
-      " Amet, assumenda beatae cumque nostrum obcaecati qui temporibus voluptates! Debitis deserunt odit quod ratione": {
-        " Aut consequatur molestias nostrum obcaecati tempore!": ""
-      }
-    }
-  },
   "error-occurred": "An error has occured",
   "language": "English",
   "nav-button-collapse": "Compress",
@@ -15,5 +8,7 @@
   "reload-page": "",
   "short-language": "En",
   "sign-in": "Sign in",
-  "throw-an-error": "Throw an error!"
+  "throw-an-error": "Throw an error!",
+  "increment": "increment",
+  "decrement": "decrement"
 }
