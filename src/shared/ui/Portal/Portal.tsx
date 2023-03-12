@@ -1,18 +1,16 @@
 import React, { ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 
-import { classNames } from 'shared/lib/classNames';
-import classes from './Portal.module.scss';
-
 interface PortalProps {
-    element?: HTMLElement,
     children: ReactNode,
+    container?: HTMLElement
 }
 
 export const Portal: React.FC<PortalProps> = (props) => {
   const {
-    element = document.body,
     children,
+    container = document.body,
   } = props;
-  return ReactDOM.createPortal(children, element);
+
+  return ReactDOM.createPortal(children, container);
 };

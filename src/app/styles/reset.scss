@@ -1,4 +1,6 @@
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,4 +15,17 @@ button {
 body {
   font-size: var(--font-m);
   font-family: var(--font-family-main);
+}
+
+html,
+body {
+  height: 100%;
+  min-width: var(--min-width);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  appearance: none;
 }

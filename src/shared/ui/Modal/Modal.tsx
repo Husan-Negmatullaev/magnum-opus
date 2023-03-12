@@ -8,15 +8,23 @@ import classes from './Modal.module.scss';
 interface ModalProps extends React.ComponentProps<'div'> {
     isOpen?: boolean,
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 500;
 
-export const Modal: React.FC<ModalProps> = ({
-  className, onClose, isOpen, children,
-}) => {
+export const Modal: React.FC<ModalProps> = (props) => {
+  const {
+    className,
+    onClose,
+    isOpen,
+    children,
+    lazy = false,
+  } = props;
   const { theme } = useTheme();
   const [isClosing, setIsClosing] = React.useState<boolean>(false);
+  const [isMount, setIsMount] = React.useState<boolean>(true);
+
   const timeRef = React.useRef<ReturnType<typeof setTimeout>>();
 
   const closeHandler = React.useCallback(() => {
@@ -29,7 +37,7 @@ export const Modal: React.FC<ModalProps> = ({
     }
   }, [onClose]);
 
-  const onKeyDown = React.useCallback((event: KeyboardEvent) => {
+  const onKeyDownHandler = React.useCallback((event: KeyboardEvent) => {
     if (event.key === 'Escape') {
       closeHandler();
     }
@@ -41,20 +49,30 @@ export const Modal: React.FC<ModalProps> = ({
 
   React.useEffect(() => {
     if (isOpen) {
-      window.addEventListener('keydown', onKeyDown);
+      window.addEventListener('keydown', onKeyDownHandler);
     }
 
     return () => {
       clearTimeout(timeRef.current);
-      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('keydown', onKeyDownHandler);
     };
-  }, [isOpen, onKeyDown]);
+  }, [isOpen, onKeyDownHandler]);
+
+  React.useEffect(() => {
+    if (isOpen && lazy) {
+      setIsMount(false);
+    }
+  }, [isOpen, lazy]);
 
   const mods: Record<string, boolean> = {
     [classes.modal_open]: isOpen,
     [classes.modal_closing]: isClosing,
     [classes[theme]]: true,
   };
+
+  if (isMount && !isOpen && lazy) {
+    return null;
+  }
 
   return (
     <Portal>

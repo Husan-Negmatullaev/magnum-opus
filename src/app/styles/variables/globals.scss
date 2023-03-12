@@ -13,6 +13,7 @@
   --font-xl: var(--font-size-xl) / var(--fs-line-xl) var(--font-family-main);
 
   // Размеры
+  --min-width: 320px;
   --nav-height: 50px;
   --sidebar-width: calc(300px);
   --sidebar-width-collapsed: calc(80px);

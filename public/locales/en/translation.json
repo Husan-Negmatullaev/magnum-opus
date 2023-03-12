@@ -1,4 +1,11 @@
 {
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
+    " Consequuntur delectus eum exercitationem, id officia quas quibusdam quo saepe suscipit voluptatibus": {
+      " Amet, assumenda beatae cumque nostrum obcaecati qui temporibus voluptates! Debitis deserunt odit quod ratione": {
+        " Aut consequatur molestias nostrum obcaecati tempore!": ""
+      }
+    }
+  },
   "decrement": "decrement",
   "error-occurred": "An error has occured",
   "increment": "increment",
@@ -10,5 +17,7 @@
   "reload-page": "",
   "short-language": "En",
   "sign-in": "Sign in",
-  "throw-an-error": "Throw an error!"
+  "throw-an-error": "Throw an error!",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password"
 }

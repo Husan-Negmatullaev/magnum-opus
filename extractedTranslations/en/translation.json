@@ -24,5 +24,7 @@
   "not-found": "",
   "reload-page": "",
   "sign-in": "",
-  "throw-an-error": ""
+  "throw-an-error": "",
+  "Введите username": "",
+  "Введите пароль": ""
 }
