@@ -1,23 +1,20 @@
 {
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
-    " Consequuntur delectus eum exercitationem, id officia quas quibusdam quo saepe suscipit voluptatibus": {
-      " Amet, assumenda beatae cumque nostrum obcaecati qui temporibus voluptates! Debitis deserunt odit quod ratione": {
-        " Aut consequatur molestias nostrum obcaecati tempore!": ""
-      }
-    }
-  },
   "decrement": "decrement",
+  "error": "",
   "error-occurred": "An error has occured",
+  "form-error": "Error in field",
   "increment": "increment",
   "language": "English",
+  "login-form-title": "",
   "nav-button-collapse": "Compress",
   "nav-link-about": "About",
   "nav-link-home": "Home",
   "not-found": "Page not found",
+  "placeholder-password": "Enter password",
+  "placeholder-username": "Enter username",
   "reload-page": "",
   "short-language": "En",
   "sign-in": "Sign in",
-  "throw-an-error": "Throw an error!",
-  "Введите username": "Enter username",
-  "Введите пароль": "Enter password"
+  "sign-out": "Sign out",
+  "throw-an-error": "Throw an error!"
 }

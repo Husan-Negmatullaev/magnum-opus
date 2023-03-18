@@ -21,7 +21,7 @@ export const ThemeButton: React.FC<ToggleThemeProps> = ({ className }) => {
       onClick={toggleTheme}
       className={classNames('', {}, [className])}
     >
-      {theme === Theme.LIGHT ? <IconThemeDark /> : <IconThemeLight />}
+      {theme === Theme.DARK ? <IconThemeDark /> : <IconThemeLight />}
     </Button>
   );
 };

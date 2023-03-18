@@ -2,6 +2,12 @@
   cursor: pointer;
   padding: 6px 15px;
 
+  &:disabled {
+    opacity: 0.5;
+    transition: 0.3s opacity ease 0s;
+    cursor: wait;
+  }
+
   &.clear,
   &.clearInverted {
     padding: 0;

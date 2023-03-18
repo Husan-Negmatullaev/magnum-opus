@@ -11,11 +11,9 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof AboutPage>;
 
-const Template: ComponentStory<typeof AboutPage> = (
-  args,
-) => <AboutPage />;
+const Template: ComponentStory<typeof AboutPage> = () => <AboutPage />;
 
-export const AboutPageLight = Template.bind({});
+export const Primary = Template.bind({});
 
 export const AboutPageDark = Template.bind({});
 AboutPageDark.decorators = [ThemeDecorator(Theme.DARK)];

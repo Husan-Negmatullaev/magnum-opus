@@ -1,4 +1,4 @@
-import Webpack from 'webpack';
+import Webpack, { DefinePlugin } from 'webpack';
 import path from 'path';
 import { BuildPaths } from '../build/types/configs';
 import { getSassLoader } from '../build/loaders/sassLoader';
@@ -26,6 +26,10 @@ export default ({ config }: { config: Webpack.Configuration }) => {
 
   config.module.rules.push(getSvgLoader());
   config.module.rules.push(getSassLoader(true));
+
+  config.plugins.push(new DefinePlugin({
+    __IS_DEV__: true,
+  }));
 
   return config;
 };

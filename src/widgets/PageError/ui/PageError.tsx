@@ -12,9 +12,9 @@ interface PageErrorProps extends React.ComponentProps<'section'> {
 export const PageError: React.FC<PageErrorProps> = ({ className }) => {
   const { t } = useTranslation();
 
-  const onReload = () => {
+  const onReload = React.useCallback(() => {
     window.location.reload();
-  };
+  }, []);
 
   return (
     <section className={classNames(classes.pageError, {}, [className])}>

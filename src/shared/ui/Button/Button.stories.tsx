@@ -5,7 +5,7 @@ import {
   ThemeDecorator,
 } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
-import { Button, ButtonSizes, ButtonThemes } from 'shared/ui/Button/Button';
+import { Button, ButtonSizes, ButtonThemes } from './Button';
 
 export default {
   title: 'shared/Button',
@@ -84,4 +84,11 @@ OutlineSizeXL.args = {
   children: 'Test',
   theme: ButtonThemes.OUTLINE,
   size: ButtonSizes.size_xl,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Test',
+  theme: ButtonThemes.OUTLINE,
+  disabled: true,
 };

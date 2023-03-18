@@ -30,7 +30,7 @@ export default {
   ],
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy',
-    '\\.(svg)$': path.resolve(__dirname, 'svgComponent.tsx'),
+    '\\.(svg)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
   moduleDirectories: [
     'node_modules',

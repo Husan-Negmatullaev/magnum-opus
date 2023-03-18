@@ -1,29 +1,21 @@
 {
-  "          Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
-    " Consequuntur delectus eum exercitationem, id officia quas quibusdam quo saepe suscipit voluptatibus": {
-      " Amet, assumenda beatae cumque nostrum obcaecati qui temporibus voluptates! Debitis deserunt odit quod ratione": {
-        " Aut consequatur molestias nostrum obcaecati tempore!": ""
-      }
-    }
-  },
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
-    " Consequuntur delectus eum exercitationem, id officia quas quibusdam quo saepe suscipit voluptatibus": {
-      " Amet, assumenda beatae cumque nostrum obcaecati qui temporibus voluptates! Debitis deserunt odit quod ratione": {
-        " Aut consequatur molestias nostrum obcaecati tempore!": ""
-      }
-    }
-  },
   "Sign in": "",
   "decrement": "",
+  "error": "",
   "error-occurred": "",
+  "form-error": "",
   "increment": "",
   "language": "",
+  "login-form-title": "",
   "nav-button-collapse": "",
   "nav-link-about": "",
   "nav-link-home": "",
   "not-found": "",
+  "placeholder-password": "",
+  "placeholder-username": "",
   "reload-page": "",
   "sign-in": "",
+  "sign-out": "",
   "throw-an-error": "",
   "Введите username": "",
   "Введите пароль": ""

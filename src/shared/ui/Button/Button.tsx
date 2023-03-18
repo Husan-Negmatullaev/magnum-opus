@@ -10,14 +10,13 @@ export enum ButtonThemes {
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted',
 }
-
 export enum ButtonSizes {
     size_m = 'size_m',
     size_l = 'size_l',
     size_xl = 'size_xl',
 }
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: ButtonThemes;
     size?: ButtonSizes;
     square?: boolean;
@@ -30,6 +29,8 @@ export const Button: React.FC<ButtonProps> = (props) => {
     square,
     size = ButtonSizes.size_m,
     theme = ButtonThemes.CLEAR,
+    type = 'button',
+    disabled = false,
     ...otherProps
   } = props;
 
@@ -42,10 +43,13 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   return (
     <button
-      type="button"
-      className={
-        classNames(classes.button, { }, additional)
-      }
+      type={type}
+      className={classNames(
+        classes.button,
+        { },
+        additional,
+      )}
+      disabled={disabled}
       {...otherProps}
     >
       {children}

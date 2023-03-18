@@ -1,22 +1,21 @@
 {
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
-    " Consequuntur delectus eum exercitationem, id officia quas quibusdam quo saepe suscipit voluptatibus": {
-      " Amet, assumenda beatae cumque nostrum obcaecati qui temporibus voluptates! Debitis deserunt odit quod ratione": {
-        " Aut consequatur molestias nostrum obcaecati tempore!": ""
-      }
-    }
-  },
   "decrement": "уменьшить",
+  "error": "",
   "error-occurred": "Произошла ощибка",
+  "form-error": "Ошибка в полях",
   "increment": "увеличить",
   "language": "Русский",
+  "login-form-title": "",
   "nav-button-collapse": "Сжать",
   "nav-link-about": "О нас",
   "nav-link-home": "Главная",
   "not-found": "Страница не найдена",
+  "placeholder-password": "Введите пароль",
+  "placeholder-username": "Введите username",
   "reload-page": "Перезагрузить страницу!",
   "short-language": "Ру",
   "sign-in": "Войти",
+  "sign-out": "Выход",
   "throw-an-error": "Вызвать ошибку!",
   "Введите username": "Введите username",
   "Введите пароль": "Введите пароль"

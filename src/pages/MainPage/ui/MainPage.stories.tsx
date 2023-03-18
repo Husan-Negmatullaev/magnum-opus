@@ -16,6 +16,7 @@ const Template: ComponentStory<typeof MainPage> = (
 ) => <MainPage />;
 
 export const MainPageLight = Template.bind({});
+MainPageLight.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const MainPageDark = Template.bind({});
 MainPageDark.decorators = [ThemeDecorator(Theme.DARK)];

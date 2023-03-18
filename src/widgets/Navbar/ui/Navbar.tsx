@@ -4,6 +4,8 @@ import { classNames } from 'shared/lib/classNames';
 
 import { Button, ButtonThemes } from 'shared/ui/Button';
 import { LoginModal } from 'features/AuthByUsername';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAuthUserState, userActions } from 'entities/User';
 import classes from './Navbar.module.scss';
 
 interface NavbarProp extends React.ComponentProps<'nav'> {
@@ -13,14 +15,35 @@ interface NavbarProp extends React.ComponentProps<'nav'> {
 export const Navbar: React.FC<NavbarProp> = ({ className }) => {
   const { t } = useTranslation();
   const [isOpenAuth, setIsOpenAuth] = React.useState<boolean>(false);
+  const dispatch = useDispatch();
+  const authData = useSelector(getAuthUserState);
 
   const onCloseAuthModal = React.useCallback(() => {
     setIsOpenAuth(false);
   }, []);
 
+  const onLogout = React.useCallback(() => {
+    dispatch(userActions.logout());
+    setIsOpenAuth(false);
+  }, [dispatch]);
+
   const onOpenAuthModal = React.useCallback(() => {
     setIsOpenAuth(true);
   }, []);
+
+  if (authData) {
+    return (
+      <nav className={classNames(classes.navbar, {}, [className])}>
+        <Button
+          type="button"
+          theme={ButtonThemes.CLEAR_INVERTED}
+          onClick={onLogout}
+        >
+          {t('sign-out')}
+        </Button>
+      </nav>
+    );
+  }
 
   return (
     <nav className={classNames(classes.navbar, {}, [className])}>

@@ -9,13 +9,22 @@ import { classNames } from 'shared/lib/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 
 import 'app/styles/index.scss';
+import { useDispatch } from 'react-redux';
+import { userActions } from 'entities/User';
+import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 
 const App = () => {
   const { theme } = useTheme();
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    const user = JSON.parse(localStorage.getItem(USER_LOCALSTORAGE_KEY));
+    dispatch(userActions.initUser(user));
+  }, [dispatch]);
 
   return (
     <Suspense fallback="">
-      <div className={classNames('app', {}, [theme])}>
+      <div className={classNames('app', {}, [])}>
         <Navbar />
         <div className="content-app">
           <SidebarLayout />
