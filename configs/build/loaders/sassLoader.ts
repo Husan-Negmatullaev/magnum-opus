@@ -18,4 +18,5 @@ export const getSassLoader = (isDev: boolean): Webpack.RuleSetRule => ({
     },
     'sass-loader',
   ],
+  sideEffects: true,
 });

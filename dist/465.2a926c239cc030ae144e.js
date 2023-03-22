@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmagnum_opus=self.webpackChunkmagnum_opus||[]).push([[465],{1465:(e,u,n)=>{n.r(u),n.d(u,{default:()=>o});var t=n(5893),a=n(5443),r=$RefreshSig$(),s=function(){r();var e=(0,a.$)("about").t;return(0,t.jsx)("div",{children:e("about:main-text")})};r(s,"h6J0Q3nxDyaAQ99JMz6OOoWbcwM=",!1,(function(){return[a.$]}));const o=s;$RefreshReg$(s,"AboutPage")}}]);

@@ -1,7 +1,7 @@
+@import "reset";
 @import "./variables/globals";
 @import "./themes/normal";
 @import "./themes/dark";
-@import "reset";
 
 body {
   color: var(--primary-color);

@@ -1,7 +1,7 @@
 import { render } from 'react-dom';
-import { StoreProvider } from 'app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from 'app/providers/StoreProvider';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import App from 'app/App';
 

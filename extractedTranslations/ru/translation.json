@@ -1,0 +1,16 @@
+{
+  "decrement": "decrement",
+  "error-occurred": "error-occurred",
+  "form-error": "form-error",
+  "increment": "increment",
+  "login-form-title": "login-form-title",
+  "nav-link-about": "nav-link-about",
+  "nav-link-home": "nav-link-home",
+  "not-found": "not-found",
+  "placeholder-password": "placeholder-password",
+  "placeholder-username": "placeholder-username",
+  "reload-page": "reload-page",
+  "sign-in": "sign-in",
+  "sign-out": "sign-out",
+  "throw-an-error": "throw-an-error"
+}

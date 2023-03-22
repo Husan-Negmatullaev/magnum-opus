@@ -121,5 +121,6 @@
         "preset": "iPhone 7"
       }
     }
-  }
+  },
+  "sideEffects": false
 }

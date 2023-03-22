@@ -9,6 +9,7 @@ export function buildWebpackConfig(
   configs: BuildOptions,
 ): webpack.Configuration {
   const { mode, paths, isDev } = configs;
+
   return {
     mode,
     entry: paths.entry,
@@ -24,6 +25,9 @@ export function buildWebpackConfig(
     resolve: buildResolvers(configs),
     devServer: isDev ? buildDevServer(configs) : undefined,
     devtool: isDev ? 'inline-source-map' : undefined,
-    cache: !isDev,
+    optimization: {
+      sideEffects: !isDev,
+
+    },
   };
 }

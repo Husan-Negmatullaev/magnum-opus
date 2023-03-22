@@ -1,6 +1,7 @@
 .idea
 node_modules
 ./dist
+./build
 ./extractedTranslations
 .loki/report.html
 .loki/report.json

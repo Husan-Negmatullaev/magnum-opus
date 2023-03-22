@@ -25,7 +25,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   };
 
   const babelLoader: RuleSetRule = {
-    test: /\.(js|jsx|ts|tsx)$/,
+    test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
@@ -36,9 +36,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             'i18next-extract',
             {
               locales: ['en', 'ru'],
-              keyAsDefaultValue: false,
-              saveMissing: true,
-              outputPath: 'public/locales/{{locale}}/{{ns}}.json',
+              keyAsDefaultValue: true,
             },
           ],
         ],
@@ -51,20 +49,20 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
     use: [
       {
-        loader: 'babel-loader',
+        loader: require.resolve('babel-loader'),
         options: {
-          plugins: ['react-refresh/babel'],
+          plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
         },
       },
     ],
   };
 
   return [
-    sassLoader,
-    babelLoader,
     reactRefresh,
-    typescriptLoader,
     svgLoader,
     imageLoader,
+    babelLoader,
+    typescriptLoader,
+    sassLoader,
   ];
 }
