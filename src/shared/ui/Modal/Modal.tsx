@@ -2,7 +2,6 @@ import React from 'react';
 
 import { classNames } from 'shared/lib/classNames';
 import { Portal } from 'shared/ui/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
 import classes from './Modal.module.scss';
 
 interface ModalProps extends React.ComponentProps<'div'> {
@@ -21,7 +20,6 @@ export const Modal: React.FC<ModalProps> = (props) => {
     children,
     lazy = false,
   } = props;
-  const { theme } = useTheme();
   const [isClosing, setIsClosing] = React.useState<boolean>(false);
   const [isMount, setIsMount] = React.useState<boolean>(true);
 
@@ -67,7 +65,6 @@ export const Modal: React.FC<ModalProps> = (props) => {
   const mods: Record<string, boolean> = {
     [classes.modal_open]: isOpen,
     [classes.modal_closing]: isClosing,
-    [classes[theme]]: true,
   };
 
   if (isMount && !isOpen && lazy) {

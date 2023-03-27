@@ -14,7 +14,7 @@ interface TextProps extends React.ComponentProps<'div'> {
   themes?: TextThemes;
 }
 
-export const Text: React.FC<TextProps> = (props) => {
+export const Text = React.memo((props: TextProps) => {
   const {
     className,
     text,
@@ -27,4 +27,4 @@ export const Text: React.FC<TextProps> = (props) => {
       {text && <p className={classes.text}>{text}</p>}
     </div>
   );
-};
+});

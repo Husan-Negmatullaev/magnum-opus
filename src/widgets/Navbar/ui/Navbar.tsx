@@ -8,11 +8,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAuthUserState, userActions } from 'entities/User';
 import classes from './Navbar.module.scss';
 
-interface NavbarProp extends React.ComponentProps<'nav'> {
+interface NavbarProps extends React.ComponentProps<'nav'> {
 
 }
 
-export const Navbar: React.FC<NavbarProp> = ({ className }) => {
+export const Navbar = React.memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isOpenAuth, setIsOpenAuth] = React.useState<boolean>(false);
   const dispatch = useDispatch();
@@ -58,4 +58,4 @@ export const Navbar: React.FC<NavbarProp> = ({ className }) => {
       </div>
     </nav>
   );
-};
+});

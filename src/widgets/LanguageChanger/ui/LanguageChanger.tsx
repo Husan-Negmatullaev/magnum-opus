@@ -9,12 +9,7 @@ interface LanguageChangerProps extends React.ComponentProps<'button'> {
   short?: boolean;
 }
 
-export const LanguageChanger: React.FC<LanguageChangerProps> = (
-  {
-    className,
-    short,
-  },
-) => {
+export const LanguageChanger = React.memo(({ className, short }: LanguageChangerProps) => {
   const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => {
@@ -29,4 +24,4 @@ export const LanguageChanger: React.FC<LanguageChangerProps> = (
       {t(short ? 'short-language' : 'language')}
     </Button>
   );
-};
+});

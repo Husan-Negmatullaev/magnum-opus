@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmagnum_opus=self.webpackChunkmagnum_opus||[]).push([[682],{3682:(e,u,n)=>{n.r(u),n.d(u,{default:()=>a});var s=n(5893),t=n(987);const a=function(){var e=(0,t.$)("home").t;return(0,s.jsx)("div",{children:e("home:main-text")})}}}]);

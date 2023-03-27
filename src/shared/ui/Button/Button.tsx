@@ -22,7 +22,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = (props) => {
+export const Button = React.memo((props: ButtonProps) => {
   const {
     children,
     className,
@@ -55,4 +55,4 @@ export const Button: React.FC<ButtonProps> = (props) => {
       {children}
     </button>
   );
-};
+});

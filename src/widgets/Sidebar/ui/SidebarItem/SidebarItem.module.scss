@@ -1,0 +1,25 @@
+.sidebarItem {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 15px;
+
+  &.collapsed {
+    padding: 0 10px;
+  }
+
+  &__text {
+    .sidebarItem.collapsed & {
+      display: none;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__icon {
+    fill: var(--primary-inverted-color);
+  }
+}

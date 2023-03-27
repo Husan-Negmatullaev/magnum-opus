@@ -12,7 +12,7 @@ interface ToggleThemeProps extends React.HTMLAttributes<HTMLButtonElement> {
 
 }
 
-export const ThemeButton: React.FC<ToggleThemeProps> = ({ className }) => {
+export const ThemeButton = React.memo(({ className }: ToggleThemeProps) => {
   const { toggleTheme, theme } = useTheme();
 
   return (
@@ -24,4 +24,4 @@ export const ThemeButton: React.FC<ToggleThemeProps> = ({ className }) => {
       {theme === Theme.DARK ? <IconThemeDark /> : <IconThemeLight />}
     </Button>
   );
-};
+});

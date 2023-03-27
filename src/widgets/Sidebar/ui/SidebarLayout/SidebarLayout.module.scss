@@ -26,26 +26,6 @@
     row-gap: 25px;
   }
 
-  &__link {
-    display: inline-flex;
-    align-items: center;
-    column-gap: 15px;
-
-    .sidebar.collapsed & span {
-      display: none;
-    }
-
-    .sidebar.collapsed & {
-      padding: 0 10px;
-    }
-
-    @media (any-hover: hover) {
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-
   &__icon {
     fill: var(--primary-inverted-color);
   }

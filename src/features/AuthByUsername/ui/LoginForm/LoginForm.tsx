@@ -4,9 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonThemes } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Text, TextThemes } from 'shared/ui/Text';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
@@ -16,16 +17,16 @@ import { loginActions, loginReducer } from '../../model/slices/loginSlice';
 import classes from './LoginForm.module.scss';
 
 export interface LoginFormProps extends React.ComponentProps<'div'> {
-
+  onSuccess?: () => void;
 }
 
 const initialReducers: ReducersList = {
   login: loginReducer,
 };
 
-const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ className, onSuccess }) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const password = useSelector(getLoginPassword);
   const username = useSelector(getLoginUsername);
   const isLoading = useSelector(getLoginLoading);
@@ -39,15 +40,19 @@ const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 
-  const onSubmitHandler = React.useCallback((event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitHandler = React.useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!isLoading) {
-      dispatch(loginByUsername({ username, password }));
+    const result = await dispatch(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
     }
-  }, [dispatch, password, username, isLoading]);
+  }, [dispatch, onSuccess, password, username]);
 
   return (
-    <DynamicModuleLoader reducers={initialReducers}>
+    <DynamicModuleLoader
+      removeAfterUnmount
+      reducers={initialReducers}
+    >
       <form
         className={classNames(classes.form, {}, [className])}
         onSubmit={onSubmitHandler}

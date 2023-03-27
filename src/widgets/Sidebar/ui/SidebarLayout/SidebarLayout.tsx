@@ -7,24 +7,25 @@ import { Button, ButtonThemes } from 'shared/ui/Button';
 
 import { classNames } from 'shared/lib/classNames';
 import { ButtonSizes } from 'shared/ui/Button/Button';
-import { AppLink } from 'shared/ui/AppLink';
-import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import HomeIcon from 'shared/assets/icons/home-icon.svg';
-import AboutIcon from 'shared/assets/icons/about-icon.svg';
+import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import classes from './SidebarLayout.module.scss';
+import { SidebarItemsList } from '../../model/items';
 
 interface SidebarLayoutProps extends React.ComponentProps<'aside'> {
 
 }
 
-export const SidebarLayout: React.FC<SidebarLayoutProps> = ({ className }) => {
+export const SidebarLayout = React.memo(({ className }: SidebarLayoutProps) => {
   const { t } = useTranslation();
   const [collapse, setCollapse] = React.useState<boolean>();
 
   const toggleCollapse = async () => {
     await setCollapse((prev) => !prev);
   };
+
+  const itemsList = React.useMemo(() => SidebarItemsList.map(
+    (item) => <SidebarItem key={item.path} item={item} collapsed={collapse} />,
+  ), [collapse]);
 
   return (
     <aside
@@ -37,22 +38,7 @@ export const SidebarLayout: React.FC<SidebarLayoutProps> = ({ className }) => {
     >
       <div className={classes.sidebar__body}>
         <div className={classes.sidebar__links}>
-          <AppLink
-            theme={AppLinkTheme.PRIMARY}
-            to={RoutePath.main}
-            className={classes.sidebar__link}
-          >
-            <HomeIcon className={classes.sidebar__icon} />
-            <span>{t('nav-link-home')}</span>
-          </AppLink>
-          <AppLink
-            theme={AppLinkTheme.SECONDARY}
-            to={RoutePath.about}
-            className={classes.sidebar__link}
-          >
-            <AboutIcon className={classes.sidebar__icon} />
-            <span>{t('nav-link-about')}</span>
-          </AppLink>
+          {itemsList}
         </div>
         <Button
           className={classes.sidebar__collapse}
@@ -71,4 +57,4 @@ export const SidebarLayout: React.FC<SidebarLayoutProps> = ({ className }) => {
       </div>
     </aside>
   );
-};
+});

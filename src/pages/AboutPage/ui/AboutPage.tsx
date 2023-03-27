@@ -1,13 +1,14 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const AboutPage = () => {
+const AboutPage = React.memo(() => {
   const { t } = useTranslation('about');
 
   return (
     <div>
-      {t('about:main-text')}
+      {t('main-text')}
     </div>
   );
-};
+});
 
 export default AboutPage;

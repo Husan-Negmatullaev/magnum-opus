@@ -14,7 +14,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({ className }) => {
   return (
     <section className={classNames(classes.notFoundPage, {}, [className])}>
       <h1 className={classes.notFoundPage__title}>
-        {t('translation:not-found')}
+        {t('not-found')}
       </h1>
     </section>
   );
