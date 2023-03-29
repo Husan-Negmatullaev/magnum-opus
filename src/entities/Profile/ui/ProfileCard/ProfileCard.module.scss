@@ -1,0 +1,20 @@
+.profile {
+  padding: 15px;
+  border: 2px solid var(--bg-inverted-color);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    margin-top: 20px;
+  }
+
+  &__input {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}

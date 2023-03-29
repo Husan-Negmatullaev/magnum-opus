@@ -56,9 +56,11 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
     'react/button-has-type': 'warn',
+    'no-undef': 'off',
   },
   globals: {
     __IS_DEV__: true,
+    __API__: 'readonly',
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

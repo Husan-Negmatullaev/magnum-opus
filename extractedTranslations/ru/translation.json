@@ -1,5 +1,6 @@
 {
   "decrement": "decrement",
+  "edit-profile": "edit-profile",
   "error-occurred": "error-occurred",
   "form-error": "form-error",
   "increment": "increment",
@@ -11,7 +12,11 @@
   "not-found": "not-found",
   "placeholder-password": "placeholder-password",
   "placeholder-username": "placeholder-username",
+  "profile-card-title": "profile-card-title",
+  "profile-input-placeholder": "profile-input-placeholder",
+  "profile-lastname-placeholder": "profile-lastname-placeholder",
   "profile-page": "profile-page",
+  "profile-username-placeholder": "profile-username-placeholder",
   "reload-page": "reload-page",
   "sign-in": "sign-in",
   "sign-out": "sign-out",

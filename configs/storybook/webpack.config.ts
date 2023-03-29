@@ -12,11 +12,12 @@ export default ({ config }: { config: Webpack.Configuration }) => {
     build: '',
   };
 
-  config.resolve.modules.unshift(paths.src);
-  config.resolve.extensions.push('.ts', '.tsx');
+  config!.resolve!.modules!.unshift(paths.src);
+  config!.resolve!.extensions!.push('.ts', '.tsx');
 
-  // eslint-disable-next-line no-param-reassign
-  config.module.rules = config.module.rules.map((rule: Webpack.RuleSetRule) => {
+  const rules = config!.module!.rules as Webpack.RuleSetRule[];
+
+  config!.module!.rules = rules.map((rule) => {
     if (/svg/.test(rule.test as string)) {
       return { ...rule, exclude: /\.svg$/i };
     }
@@ -24,11 +25,12 @@ export default ({ config }: { config: Webpack.Configuration }) => {
     return rule;
   });
 
-  config.module.rules.push(getSvgLoader());
-  config.module.rules.push(getSassLoader(true));
+  config!.module!.rules.push(getSvgLoader());
+  config!.module!.rules.push(getSassLoader(true));
 
-  config.plugins.push(new DefinePlugin({
-    __IS_DEV__: true,
+  config!.plugins!.push(new DefinePlugin({
+    __IS_DEV__: JSON.stringify(true),
+    __API__: JSON.stringify(''),
   }));
 
   return config;

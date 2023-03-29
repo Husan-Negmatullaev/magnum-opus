@@ -13,9 +13,11 @@ const userSlice = createSlice({
     setAuthUser: (state, action: PayloadAction<User>) => {
       state.authUser = action.payload;
     },
-    initUser: (state, action: PayloadAction<User>) => {
-      if (action.payload) {
-        state.authUser = action.payload;
+    initUser: (state) => {
+      const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
+
+      if (user) {
+        state.authUser = JSON.parse(user);
       }
     },
     logout: (state) => {

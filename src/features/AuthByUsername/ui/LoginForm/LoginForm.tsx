@@ -17,7 +17,7 @@ import { loginActions, loginReducer } from '../../model/slices/loginSlice';
 import classes from './LoginForm.module.scss';
 
 export interface LoginFormProps extends React.ComponentProps<'div'> {
-  onSuccess?: () => void;
+    onSuccess?: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -44,7 +44,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ className, onSuccess }) => {
     event.preventDefault();
     const result = await dispatch(loginByUsername({ username, password }));
     if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess();
+      onSuccess?.();
     }
   }, [dispatch, onSuccess, password, username]);
 

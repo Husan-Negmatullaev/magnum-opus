@@ -11,9 +11,7 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MainPage>;
 
-const Template: ComponentStory<typeof MainPage> = (
-  args,
-) => <MainPage />;
+const Template: ComponentStory<typeof MainPage> = () => <MainPage />;
 
 export const MainPageLight = Template.bind({});
 MainPageLight.decorators = [ThemeDecorator(Theme.LIGHT)];

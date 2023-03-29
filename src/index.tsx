@@ -9,14 +9,14 @@ import 'shared/config/i18n/i18n';
 import 'app/styles/index.scss';
 
 render(
-  <StoreProvider>
-    <BrowserRouter>
-      <ThemeProvider>
-        <ErrorBoundary>
+  <BrowserRouter>
+    <StoreProvider>
+      <ErrorBoundary>
+        <ThemeProvider>
           <App />
-        </ErrorBoundary>
-      </ThemeProvider>
-    </BrowserRouter>
-  </StoreProvider>,
+        </ThemeProvider>
+      </ErrorBoundary>
+    </StoreProvider>
+  </BrowserRouter>,
   document.getElementById('root'),
 );

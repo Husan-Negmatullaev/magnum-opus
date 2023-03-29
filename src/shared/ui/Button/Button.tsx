@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { classNames } from 'shared/lib/classNames';
+import { classNames, Mods } from 'shared/lib/classNames';
 import classes from './Button.module.scss';
 
 export enum ButtonThemes {
@@ -28,26 +28,25 @@ export const Button = React.memo((props: ButtonProps) => {
     className,
     square,
     size = ButtonSizes.size_m,
-    theme = ButtonThemes.CLEAR,
+    theme = ButtonThemes.OUTLINE,
     type = 'button',
     disabled = false,
     ...otherProps
   } = props;
 
-  const additional = [
-    className,
-    classes[theme],
-    classes[size],
-    square ? classes.square : null,
-  ];
+  const mods: Mods = {
+    [classes[theme]]: true,
+    [classes[size]]: true,
+    [classes.square]: square,
+  };
 
   return (
     <button
       type={type}
       className={classNames(
         classes.button,
-        { },
-        additional,
+        mods,
+        [className],
       )}
       disabled={disabled}
       {...otherProps}

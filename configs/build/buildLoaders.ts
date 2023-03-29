@@ -9,7 +9,14 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   // Если не использкуеться typescript значит нужен babel-loader
   const typescriptLoader: RuleSetRule = {
     test: /\.tsx?$/,
-    use: 'ts-loader',
+    use: [
+      {
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true,
+        },
+      },
+    ],
     exclude: /node_modules/,
   };
 

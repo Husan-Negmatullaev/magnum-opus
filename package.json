@@ -108,6 +108,7 @@
     "webpack": "^5"
   },
   "loki": {
+    "fetchFailIgnore": ".*",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
@@ -121,6 +122,5 @@
         "preset": "iPhone 7"
       }
     }
-  },
-  "sideEffects": false
+  }
 }

@@ -5,10 +5,11 @@
     "module": "ESNext",
     "target": "es5",
     "jsx": "react-jsx",
-    "allowJs": true,
     "moduleResolution": "node",
+    "allowJs": true,
+    "strict": true,
     // Указания абсолютного путя
-    // "baseUrl": ".",
+    "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
     },
