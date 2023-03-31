@@ -1,0 +1,1 @@
+export { EditableProfileHeader } from './EditableProfileHeader';

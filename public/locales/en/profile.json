@@ -1,6 +1,15 @@
 {
   "profile-card-title": "Profile",
   "edit-profile": "Edit",
-  "profile-username-placeholder": "Your name",
-  "profile-lastname-placeholder": "Your Lastname"
+  "profile-name-placeholder": "Your name",
+  "profile-lastname-placeholder": "Your Lastname",
+  "profile-age-placeholder": "Your age",
+  "profile-city-placeholder": "Your city",
+  "profile-username-placeholder": "Your username",
+  "profile-avatar-placeholder": "Url-address avatar",
+  "profile-avatar-alt": "Аватар вользователя",
+  "error-profile-card-text": "Try reloading the page",
+  "error-profile-card-title": "An error occurred while loading the profile",
+  "cancel-edit-profile": "Cancel",
+  "save-edit-profile": "Save"
 }

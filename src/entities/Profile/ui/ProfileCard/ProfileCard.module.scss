@@ -1,6 +1,17 @@
 .profile {
-  padding: 15px;
+  padding: 20px 15px;
   border: 2px solid var(--bg-inverted-color);
+
+  &_loading,
+  &_error {
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+  }
+
+  &_editing {
+    border: 2px solid var(--primary-inverted-color);
+  }
 
   &__header {
     display: flex;
@@ -8,8 +19,10 @@
     justify-content: space-between;
   }
 
-  &__content {
-    margin-top: 20px;
+  &__meta {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
   }
 
   &__input {

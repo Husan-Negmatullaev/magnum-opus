@@ -1,6 +1,15 @@
 {
   "profile-card-title": "Профиль",
   "edit-profile": "Редактировать",
-  "profile-username-placeholder": "Ваша имя",
-  "profile-lastname-placeholder": "Ваша фамилия"
+  "profile-name-placeholder": "Ваше имя",
+  "profile-lastname-placeholder": "Ваша фамилия",
+  "profile-age-placeholder": "Ваш возраст",
+  "profile-city-placeholder": "Ваш город",
+  "profile-username-placeholder": "Ваше пользовательское имя",
+  "profile-avatar-placeholder": "Url-аддрес аватара",
+  "profile-avatar-alt": "User avatar",
+  "error-profile-card-text": "Попробуйте перезагрузить страницу",
+  "error-profile-card-title": "Произошла ошибка при загрузки профиля",
+  "cancel-edit-profile": "Отменить",
+  "save-edit-profile": "Сохранить"
 }

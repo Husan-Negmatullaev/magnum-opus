@@ -18,5 +18,7 @@
   "sign-out": "Sign out",
   "throw-an-error": "Throw an error!",
   "profile-page": "Profile page",
-  "nav-link-profile": "Profile"
+  "nav-link-profile": "Profile",
+  "choose-currency": "Choose currency",
+  "choose-country": "Choose country"
 }

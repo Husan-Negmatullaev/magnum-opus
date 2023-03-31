@@ -13,4 +13,9 @@
   &::placeholder {
     color: var(--primary-inverted-color);
   }
+
+  &.readonly {
+    opacity: 0.7;
+    cursor: default;
+  }
 }

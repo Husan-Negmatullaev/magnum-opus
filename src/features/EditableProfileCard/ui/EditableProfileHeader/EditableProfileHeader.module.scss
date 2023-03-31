@@ -1,0 +1,14 @@
+.editableProfileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__buttons {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}

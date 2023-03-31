@@ -20,5 +20,7 @@
   "Введите username": "Введите username",
   "Введите пароль": "Введите пароль",
   "profile-page": "Страница профиля",
-  "nav-link-profile": "Профиль"
+  "nav-link-profile": "Профиль",
+  "choose-currency": "Выберите валюту",
+  "choose-country": "Выберите страну"
 }

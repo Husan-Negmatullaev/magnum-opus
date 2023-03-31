@@ -17,7 +17,7 @@ interface SidebarLayoutProps extends React.ComponentProps<'aside'> {
 
 export const SidebarLayout = React.memo(({ className }: SidebarLayoutProps) => {
   const { t } = useTranslation();
-  const [collapse, setCollapse] = React.useState<boolean>();
+  const [collapse, setCollapse] = React.useState<boolean>(false);
 
   const toggleCollapse = async () => {
     await setCollapse((prev) => !prev);
