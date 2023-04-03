@@ -11,5 +11,11 @@
   "error-profile-card-text": "Try reloading the page",
   "error-profile-card-title": "An error occurred while loading the profile",
   "cancel-edit-profile": "Cancel",
-  "save-edit-profile": "Save"
+  "save-edit-profile": "Save",
+  "error-validate-no-data": "Data not specified",
+  "error-validate-age": "Incorrect age",
+  "error-validate-server": "Server error on save",
+  "error-validate-user-data": "Invalid user data",
+  "error-validate-geo-data": "Incorrect region",
+  "error-validate-names-data": "First and last name are required"
 }

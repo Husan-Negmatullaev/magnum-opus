@@ -2,6 +2,7 @@ export type {
   Profile,
   ProfileScheme,
 } from './model/type/profile';
+export { ValidateProfileErrors } from './model/type/profile';
 
 export {
   profileReducer,
@@ -25,3 +26,4 @@ export { getProfilesData } from './model/selectors/getProfilesData/getProfilesDa
 export { getProfilesForm } from './model/selectors/getProfilesForm/getProfilesForm';
 export { getProfilesError } from './model/selectors/getProfilesError/getProfilesError';
 export { getProfilesLoading } from './model/selectors/getProfilesLoading/getProfilesLoading';
+export { getProfilesValidates } from './model/selectors/getProfilesValidate/getProfilesValidates';

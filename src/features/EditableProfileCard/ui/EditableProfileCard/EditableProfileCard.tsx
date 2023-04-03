@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames';
 import {
@@ -8,30 +7,45 @@ import {
   getProfilesForm,
   getProfilesLoading,
   getProfilesReadonly,
+  getProfilesValidates,
   profileActions,
   ProfileCard,
+  ValidateProfileErrors,
 } from 'entities/Profile';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { EditableProfileHeader } from 'features/EditableProfileCard/ui/EditableProfileHeader';
 import { Currency } from 'entities/CurrencySelect';
 import { Country } from 'entities/CountrySelect';
+import { Text, TextThemes } from 'shared/ui/Text';
+import { useTranslation } from 'react-i18next';
 
 interface EditableProfileCardProps extends React.ComponentProps<'div'> {
 
 }
 
 export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ className }) => {
+  const { t } = useTranslation('profile');
   const formData = useSelector(getProfilesForm);
   const isLoading = useSelector(getProfilesLoading);
   const error = useSelector(getProfilesError);
   const readonly = useSelector(getProfilesReadonly);
+  const validateErrors = useSelector(getProfilesValidates);
 
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
     dispatch(fetchProfileData());
   }, [dispatch]);
+
+  const validateErrorsTranslate = {
+    [ValidateProfileErrors.NO_DATA]: t('error-validate-no-data'),
+    [ValidateProfileErrors.INVALID_AGE]: t('error-validate-age'),
+    [ValidateProfileErrors.SERVER_ERROR]: t('error-validate-server'),
+    [ValidateProfileErrors.INVALID_USER_DATA]: t('error-validate-user-data'),
+    [ValidateProfileErrors.INVALID_GEO_DATA]: t('error-validate-geo-data'),
+    [ValidateProfileErrors.INVALID_NAMES_DATA]: t('error-validate-names-data'),
+  };
 
   const onChangeFirstName = React.useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ first: value || '' }));
@@ -71,6 +85,12 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ classN
       <EditableProfileHeader
         readonly={readonly}
       />
+      {
+        validateErrors?.length
+          && validateErrors?.map(
+            (error) => <Text key={error} themes={TextThemes.ERROR} text={validateErrorsTranslate[error]} />,
+          )
+      }
       <div>
         <ProfileCard
           data={formData}

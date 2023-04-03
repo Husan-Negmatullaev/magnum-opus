@@ -11,5 +11,11 @@
   "error-profile-card-text": "Попробуйте перезагрузить страницу",
   "error-profile-card-title": "Произошла ошибка при загрузки профиля",
   "cancel-edit-profile": "Отменить",
-  "save-edit-profile": "Сохранить"
+  "save-edit-profile": "Сохранить",
+  "error-validate-no-data": "Данные не указаны",
+  "error-validate-age": "Некорректный возраст",
+  "error-validate-server": "Серверная ошибка при созранении",
+  "error-validate-user-data": "Не корректные данные пользователя",
+  "error-validate-geo-data": "Некорректный регион",
+  "error-validate-names-data": "Имя и фамилия обязательны"
 }
