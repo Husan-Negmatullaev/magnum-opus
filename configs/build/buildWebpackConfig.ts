@@ -27,7 +27,6 @@ export function buildWebpackConfig(
     devtool: isDev ? 'inline-source-map' : undefined,
     optimization: {
       sideEffects: !isDev,
-
     },
   };
 }

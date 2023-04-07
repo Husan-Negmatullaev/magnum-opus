@@ -61,6 +61,7 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
     __API__: 'readonly',
+    __PROJECT__: 'readonly',
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

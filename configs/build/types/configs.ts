@@ -15,10 +15,11 @@ export interface BuildEnv {
 }
 
 export interface BuildOptions {
-     mode: BuildMode;
-     paths: BuildPaths;
-     isDev: boolean;
-     port: number;
-     analyze: boolean;
-     apiUrl: string;
+    mode: BuildMode;
+    paths: BuildPaths;
+    isDev: boolean;
+    port: number;
+    analyze: boolean;
+    apiUrl: string;
+    project: 'storybook' | 'frontend' | 'jest';
 }

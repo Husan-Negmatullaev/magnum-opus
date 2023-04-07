@@ -34,10 +34,6 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({ classN
 
   const dispatch = useAppDispatch();
 
-  React.useEffect(() => {
-    dispatch(fetchProfileData());
-  }, [dispatch]);
-
   const validateErrorsTranslate = {
     [ValidateProfileErrors.NO_DATA]: t('error-validate-no-data'),
     [ValidateProfileErrors.INVALID_AGE]: t('error-validate-age'),
