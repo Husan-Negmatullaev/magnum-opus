@@ -19,3 +19,6 @@ export const ThemeButtonLight = Template.bind({});
 
 export const ThemeButtonDark = Template.bind({});
 ThemeButtonDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const ThemeButtonBlue = Template.bind({});
+ThemeButtonBlue.decorators = [ThemeDecorator(Theme.BLUE)];
