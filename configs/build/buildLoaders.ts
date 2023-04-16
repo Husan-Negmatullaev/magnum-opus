@@ -2,6 +2,7 @@ import webpack, { RuleSetRule } from 'webpack';
 import { getSassLoader } from './loaders/sassLoader';
 import { BuildOptions } from './types/configs';
 import { getSvgLoader } from './loaders/svgLoader';
+import { babelLoader } from './loaders/babelLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const sassLoader: RuleSetRule = getSassLoader(isDev);
@@ -31,44 +32,10 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
-  const babelLoader: RuleSetRule = {
-    test: /\.(js|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: [
-          [
-            'i18next-extract',
-            {
-              locales: ['en', 'ru'],
-              keyAsDefaultValue: true,
-            },
-          ],
-        ],
-      },
-    },
-  };
-
-  const reactRefresh: RuleSetRule = {
-    test: /\.[jt]sx?$/,
-    exclude: /node_modules/,
-    use: [
-      {
-        loader: require.resolve('babel-loader'),
-        options: {
-          plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
-        },
-      },
-    ],
-  };
-
   return [
-    reactRefresh,
     svgLoader,
     imageLoader,
-    babelLoader,
+    babelLoader(isDev),
     typescriptLoader,
     sassLoader,
   ];
