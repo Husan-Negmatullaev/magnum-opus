@@ -7,13 +7,13 @@ import { AppRouter } from 'app/providers/router/routeConfig';
 import { classNames } from 'shared/lib/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserMount, userActions } from 'entities/User';
 
 const App = () => {
   const { theme } = useTheme();
   const dispatch = useDispatch();
+  const _mount = useSelector(getUserMount);
 
   React.useEffect(() => {
     dispatch(userActions.initUser());
@@ -26,7 +26,7 @@ const App = () => {
         <div className="content-app">
           <SidebarLayout />
           <main>
-            <AppRouter />
+            {_mount && <AppRouter />}
           </main>
         </div>
       </Suspense>

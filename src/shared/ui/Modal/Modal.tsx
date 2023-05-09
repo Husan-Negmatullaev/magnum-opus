@@ -20,6 +20,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
     children,
     lazy = false,
   } = props;
+
   const [isClosing, setIsClosing] = React.useState<boolean>(false);
   const [isMount, setIsMount] = React.useState<boolean>(true);
 

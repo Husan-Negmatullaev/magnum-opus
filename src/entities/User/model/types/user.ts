@@ -5,4 +5,6 @@ export interface User {
 
 export interface UserScheme {
     authUser?: User;
+
+    _mount: boolean;
 }
